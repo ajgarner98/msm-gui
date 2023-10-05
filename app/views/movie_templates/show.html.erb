@@ -13,13 +13,13 @@
 
 <hr>
 
-<form action= "/modify_movie_record/<%=@the_movie.id%>" method = "post">
+<form action = "/modify_movie_record/<%= @the_movie.id%>" method = "post">
   <div>
     <label for = "title_field" >
     Title
     </label>
-    <input id = "title_field" type = "text" name = "the_title" value = "<%=@the_movie.title%>"> 
-  </div>
+    <input id ="title_field" type = "text" name = "the_title" value = "<%=@the_movie.title%>">
+  </div
 
   <div>
     <label for = "year_field">
@@ -50,14 +50,16 @@
   </div>
 
   <div>
-    <label for = "director_id_field">
-    Direct Id
+    <label for  = "director_id_field">
+    Director ID
     </label>
     <input id = "director_id_field" type = "text" name = "the_director_id" value = "<%=@the_movie.director_id%>">
   </div>
+
   <button>
-  Update movie
+    Update movie
   </button>
+
 </form>
 
 <hr>
