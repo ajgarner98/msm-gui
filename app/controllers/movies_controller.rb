@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
 
   def update
     m_id = params.fetch("the_id")
-    matching_records = Movies.where({:id => m_id})
+    matching_records = Movie.where({:id => m_id})
     the_movie = matching_records.at(0)
 
     the_movie.title = params.fetch("the_title")
@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
     the_movie.duration = params.fetch("the_duration")
     the_movie.description = params.fetch("the_description")
     the_movie.image = params.fetch("the_image")
-    the_movie.direct = params.fetch("the_direct_id")
+    the_movie.director_id = params.fetch("the_director_id")
 
     the_movie.save
 
