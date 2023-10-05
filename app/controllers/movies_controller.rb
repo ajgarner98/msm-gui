@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
   def create
     #Retrieve User input from params
     #Create record in movie table
@@ -17,6 +18,24 @@ class MoviesController < ApplicationController
     m.save
 
     redirect_to("/movies")
+
+  end
+
+  def update
+    m_id = params.fetch("the_id")
+    matching_records = Movies.where({:id => m_id})
+    the_movie = matching_records.at(0)
+
+    the_movie.title = params.fetch("the_title")
+    the_movie.year = params.fetch("the_year")
+    the_movie.duration = params.fetch("the_duration")
+    the_movie.description = params.fetch("the_description")
+    the_movie.image = params.fetch("the_image")
+    the_movie.direct = params.fetch("the_direct_id")
+
+    the_movie.save
+
+    redirect_to("/movies/#{the_movie.id}")
 
   end
 
