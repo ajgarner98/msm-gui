@@ -111,7 +111,11 @@
     
     <% the_director = matching_directors.at(0) %>
 
-    <%= the_director.name %>
+    <% if the_director == nil %>
+        oh no
+      <%else%>
+        <%=the_director.name%>
+      <%end%>
 
   </dd>
 
